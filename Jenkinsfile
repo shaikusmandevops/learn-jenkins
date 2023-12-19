@@ -3,7 +3,7 @@ pipeline {
     agent { node { label 'workstation' } }
     environment {
            url = "google.com"
-           ssh_key= credentials('centos-ssh')
+           ssh_key= credentials("centos-ssh")
         }
         options {
                 ansiColor('xterm')
@@ -27,7 +27,7 @@ pipeline {
                 echo ssh_key
                 sh 'env'
                 sh 'ansible -i 52.87.217.141, all -e ansible_user=${SSH_USER} -e ansible_password=${SSH_PSW} -m ping'
-
+                sh 'mvn version'
             }
         }
         stage('test') {
