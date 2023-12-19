@@ -3,6 +3,7 @@ pipeline {
     agent { node { label 'workstation' } }
     environment {
            url = "google.com"
+           ssh_pwd = credentials('centos-ssh')
         }
 
     stages {
