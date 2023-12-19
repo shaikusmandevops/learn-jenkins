@@ -5,6 +5,9 @@ pipeline {
            url = "google.com"
            ssh_key= credentials('centos-ssh')
         }
+        options {
+                ansiColor('xterm')
+                }
 
     stages {
         stage('build') {
