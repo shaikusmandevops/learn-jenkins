@@ -3,13 +3,14 @@ pipeline {
     agent { node { label 'workstation' } }
     environment {
            url = "google.com"
-           ssh_pwd = credentials('centos-ssh')
+           ssh_key= credentials('centos-ssh')
         }
 
     stages {
         stage('build') {
             steps {
                 echo url
+                echo ssh_key
 
             }
         }
