@@ -1,10 +1,15 @@
 pipeline {
-    agent any
+    //agent any
+    agent { node { label 'workstation' } }
+    environment {
+           url = "google.com"
+        }
 
     stages {
         stage('build') {
             steps {
-                echo 'Hello World'
+                echo url
+
             }
         }
         stage('test') {
@@ -27,10 +32,5 @@ pipeline {
                         echo 'Hello World'
                     }
                 }
-        stage('app release') {
-                                    steps {
-                                        echo 'Hello World'
-                                    }
-                                }
     }
 }
