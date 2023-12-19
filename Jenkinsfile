@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo url
                 echo ssh_key
-                sh env
+                sh 'env'
 
             }
         }
